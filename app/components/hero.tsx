@@ -103,10 +103,6 @@ const HeroSection = () => {
               </li>
             </ul>
           </div>
-
-          <button className="bg-[#997a59] hover:bg-[#775f45] text-white font-bold py-2 px-4 rounded">
-            Learn More
-          </button>
         </div>
       </div>
     </div>
