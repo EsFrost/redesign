@@ -3,6 +3,7 @@ import Hero from "./components/hero";
 import { PromoCard } from "./components/promo-card";
 import { VideoSection } from "./components/video-section";
 import { Description } from "./components/description";
+import { Services } from "./components/services";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <PromoCard />
         <VideoSection />
         <Description />
+        <Services />
       </main>
     </div>
   );
