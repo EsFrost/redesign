@@ -78,7 +78,7 @@ export const Description = () => {
             <p className="text-lg mt-2 text-[#e9a257] text-center">
               {service.title}
             </p>
-            <ul className="italic text-sm mt-4 text-gray-600">
+            <ul className="italic mt-4 text-gray-600">
               {service.items.map((item, itemIndex) => (
                 <li key={itemIndex} className="text-center">
                   {item}
@@ -104,7 +104,7 @@ export const Description = () => {
             alt="Album of photos"
             className="w-full h-auto px-4 md:w-1/3"
           />
-          <div className="flex flex-col text-gray-600 px-4 lg:px-0 text-sm max-w-xl mt-8 md:mt-0">
+          <div className="flex flex-col text-gray-600 px-4 lg:px-0 max-w-xl mt-8 md:mt-0">
             <p>
               Επιλέξτε να εκτυπώσετε σε εμάς τα ψηφιακά σας άλμπουμ ή και τις
               φωτογραφίες απο τον γάμο, την βάπτιση ή την εκδήλωση σας και

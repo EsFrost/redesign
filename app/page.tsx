@@ -7,6 +7,7 @@ import { Services } from "./components/services";
 import DynamicForm from "./components/hire";
 import { Filler } from "./components/filler";
 import ContactForm from "./components/contact";
+import { Footer } from "./components/footer";
 
 export default function Home() {
   return (
@@ -22,6 +23,9 @@ export default function Home() {
         <Filler />
         <ContactForm />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

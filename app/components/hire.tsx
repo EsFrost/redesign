@@ -119,7 +119,7 @@ const DynamicForm: React.FC = () => {
               className={`px-4 py-2 rounded ${
                 activeButton === button
                   ? "bg-[#d6a36c] text-white hover:bg-[#be9060] transition-all duration-300"
-                  : "bg-gray-500 text-white hover:bg-[#d6a36c] transition-all duration-300"
+                  : "bg-gray-400 text-white hover:bg-[#d6a36c] transition-all duration-300"
               }`}
             >
               {button}
