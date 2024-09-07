@@ -38,7 +38,7 @@ export const PromoCard = () => {
                     w w w . m y s i t e . c o m
                   </p>
                 </div>
-                <div className="w-full justify-center items-center md:w-1/2 mx-4 my-4 order-1 md:order-2 text-center flex flex-col">
+                <div className="w-full justify-center items-center md:w-1/2 md:mx-4 my-4 order-1 md:order-2 text-center flex flex-col">
                   <Image
                     src="/logo.png"
                     width={2000}

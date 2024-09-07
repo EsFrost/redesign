@@ -66,7 +66,7 @@ const HeroSection = () => {
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-[#EACFB2]">
             Video & Photo Production
           </h1>
-          <div>
+          <div className="ml-4 md:ml-0">
             <h2 className="text-xl md:text-3xl mb-4 text-[#EACFB2] flex flex-row items-center justify-center md:justify-start">
               <div className="border border-[#EACFB2] w-12 h-0 mr-4"></div>
               <i>Όνομα Επιχείρησης</i>
