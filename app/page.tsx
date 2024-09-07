@@ -6,6 +6,7 @@ import { Description } from "./components/description";
 import { Services } from "./components/services";
 import DynamicForm from "./components/hire";
 import { Filler } from "./components/filler";
+import ContactForm from "./components/contact";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Services />
         <DynamicForm />
         <Filler />
+        <ContactForm />
       </main>
     </div>
   );
