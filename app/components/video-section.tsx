@@ -13,7 +13,7 @@ export const VideoSection = () => {
           <div className="border border-[#e9a257] h-0 w-12"></div>
         </div>
 
-        <div className="text-center mt-8 px-4">
+        <div className="text-center mt-8 px-4 md:w-1/2 md:ml-[50%] md:-translate-x-[50%]">
           <h3 className="text-3xl text-[#e9a257]">
             Αναλαμβάνουμε τον Γάμο ή την βάπτιση σας
           </h3>
@@ -46,14 +46,14 @@ export const VideoSection = () => {
 
           <div className="text-center mt-8 px-4">
             <h3 className="text-3xl text-[#e9a257]">John & Jane</h3>
-            <p className="mt-4 lg:text-xl italic text-gray-500">
+            <p className="mt-4 xl:text-xl italic text-gray-500">
               Ένας γάμος που θα μας μείνει αξέχαστος, γεμάτος ζωντάνια, κέφι
               αλλά και μοναδικά πλανα απο γή και αέρα!
             </p>
           </div>
-          <div className="mt-4 max-w-screen md:mx-auto md:mt-10">
+          <div className="mt-4 max-w-screen md:mx-auto md:mt-12">
             <YouTubeEmbed
-              videoId="oa1qKT-VJvo"
+              videoId="RzVvThhjAKw"
               width={560}
               height={330}
               className="max-w-full min-h-full px-4 overflow-hidden"
@@ -70,12 +70,12 @@ export const VideoSection = () => {
 
           <div className="text-center mt-8 px-4">
             <h3 className="text-3xl text-[#e9a257]">Jane-Doe</h3>
-            <p className="mt-4 lg:text-xl italic text-gray-500">
+            <p className="mt-4 xl:text-xl italic text-gray-500">
               Ενα υπέροχο μωρό, γεμάτο ζωντάνια και περιέργεια, μας χάρισε
               αξέχαστες στιγμές στην βάπτιση της!
             </p>
           </div>
-          <div className="mt-4 max-w-screen md:mx-auto md:mt-10">
+          <div className="mt-4 max-w-screen md:mx-auto md:mt-12">
             <YouTubeEmbed
               videoId="KLuTLF3x9sA"
               width={560}

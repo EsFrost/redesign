@@ -10,6 +10,7 @@ interface ImageCarouselProps {
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [slidesToShow, setSlidesToShow] = useState<number>(1);
+  const [isTransitioning, setIsTransitioning] = useState<boolean>(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -28,21 +29,36 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
   }, []);
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + slidesToShow >= images.length ? 0 : prevIndex + slidesToShow
-    );
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex + slidesToShow >= images.length ? 0 : prevIndex + slidesToShow
+      );
+      setIsTransitioning(false);
+    }, 300); // Half of the transition time for a smoother effect
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - slidesToShow < 0
-        ? Math.max(images.length - slidesToShow, 0)
-        : prevIndex - slidesToShow
-    );
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex - slidesToShow < 0
+          ? Math.max(images.length - slidesToShow, 0)
+          : prevIndex - slidesToShow
+      );
+      setIsTransitioning(false);
+    }, 300);
   };
 
   const goToSlide = (index: number) => {
-    setCurrentIndex(index);
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setIsTransitioning(false);
+    }, 300);
   };
 
   return (
@@ -53,7 +69,9 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
           .map((image, index) => (
             <div
               key={currentIndex + index}
-              className={`relative h-64 ${
+              className={`relative h-96 transition-opacity duration-500 ${
+                isTransitioning ? "opacity-0" : "opacity-100"
+              } ${
                 slidesToShow === 1
                   ? "w-full"
                   : slidesToShow === 2
@@ -64,8 +82,8 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
               <Image
                 src={image}
                 alt={`Slide ${currentIndex + index + 1}`}
-                layout="fill"
-                objectFit="cover"
+                fill
+                style={{ objectFit: "cover" }}
               />
             </div>
           ))}
@@ -75,6 +93,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
         onClick={prevSlide}
         className="absolute left-2 top-1/2 transform -translate-y-1/2 z-10 text-white"
         aria-label="Previous slide"
+        disabled={isTransitioning}
       >
         <ChevronLeft size={24} />
       </button>
@@ -82,6 +101,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
         onClick={nextSlide}
         className="absolute right-2 top-1/2 transform -translate-y-1/2 z-10 text-white"
         aria-label="Next slide"
+        disabled={isTransitioning}
       >
         <ChevronRight size={24} />
       </button>
@@ -98,6 +118,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
                   : "bg-gray-300"
               }`}
               aria-label={`Go to slide ${index + 1}`}
+              disabled={isTransitioning}
             />
           )
         )}
