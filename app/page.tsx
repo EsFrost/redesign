@@ -4,6 +4,8 @@ import { PromoCard } from "./components/promo-card";
 import { VideoSection } from "./components/video-section";
 import { Description } from "./components/description";
 import { Services } from "./components/services";
+import DynamicForm from "./components/hire";
+import { Filler } from "./components/filler";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
         <VideoSection />
         <Description />
         <Services />
+        <DynamicForm />
+        <Filler />
       </main>
     </div>
   );
