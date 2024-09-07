@@ -88,7 +88,7 @@ export const Description = () => {
           </div>
         ))}
       </div>
-      <div className="mt-12">
+      <div className="mt-32">
         <div className="flex justify-center items-center gap-4 px-4 lg:px-0">
           <div className="border border-[#e9a257] h-0 w-12"></div>
           <h3 className="text-3xl text-[#e9a257]">
