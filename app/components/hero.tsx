@@ -75,7 +75,7 @@ const HeroSection = () => {
             <ul className="flex flex-col items-start text-lg md:text:lg">
               <li className="text-[#EACFB2] flex items-center">
                 <Camera className="mr-2 h-5" />
-                Γάμος/Βάπτιση
+                Γάμος / Βάπτιση
               </li>
               <li className="text-[#EACFB2] flex items-center">
                 <Aperture className="mr-2 h-5" />

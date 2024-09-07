@@ -2,6 +2,7 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import { PromoCard } from "./components/promo-card";
 import { VideoSection } from "./components/video-section";
+import { Description } from "./components/description";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <PromoCard />
         <VideoSection />
+        <Description />
       </main>
     </div>
   );

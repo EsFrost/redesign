@@ -5,7 +5,7 @@ import ImageCarousel from "./utils/carousel";
 
 export const VideoSection = () => {
   return (
-    <div className="min-h-screen py-16 lg:mt-0 bg-[url('/video-section.png')]">
+    <section className="min-h-screen py-16 lg:mt-0 bg-[url('/video-section.png')]">
       <div className="mt-[334px] md:mt-0">
         <div className="flex justify-center items-center">
           <div className="border border-[#e9a257] h-0 w-12"></div>
@@ -85,6 +85,6 @@ export const VideoSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };

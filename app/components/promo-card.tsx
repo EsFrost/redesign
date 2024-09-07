@@ -4,9 +4,7 @@ import { Aperture } from "lucide-react";
 
 export const PromoCard = () => {
   return (
-    <div className="w-full min-h-screen py-16 bg-[url('/shutter-promo-card.png')] bg-cover bg-center">
-      {/* <div className="bg-[url('/shutter-promo-card.png')] w-full h-screen bg-cover bg-center"></div> */}
-
+    <section className="w-full min-h-screen py-16 bg-[url('/shutter-promo-card.png')] bg-cover bg-center">
       <div className="h-screen flex">
         <div className="flex justify-center mx-auto items-center">
           <div className=" max-w-7xl shadow-none md:shadow-[0_0_0_4px_rgba(0,0,0,1)] p-1">
@@ -51,7 +49,7 @@ export const PromoCard = () => {
                   <h3 className="text-2xl font-bold mb-8">600€</h3>
                   <ul className="text-[1.2rem] leading-10">
                     <li className="flex justify-center items-center">
-                      <Aperture className="w-2 h-2 mr-1" /> Φώτο/βίντεο
+                      <Aperture className="w-2 h-2 mr-1" /> Φώτο / βίντεο
                       μυστηρίου
                     </li>
                     <li className="flex justify-center items-center">
@@ -81,6 +79,6 @@ export const PromoCard = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
