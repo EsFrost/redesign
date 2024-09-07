@@ -74,7 +74,10 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#f5f5f5] flex flex-col justify-center items-center py-12">
+    <section
+      className="bg-[#f5f5f5] flex flex-col justify-center items-center py-12"
+      id="contact"
+    >
       <div className="p-6 max-w-3xl w-full shadow-md">
         <div className="flex justify-center items-center gap-4 px-4 lg:px-0">
           <div className="border border-[#e9a257] h-0 w-12"></div>

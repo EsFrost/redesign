@@ -1,7 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,39 +12,66 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { name: "Υπηρεσίες" },
-    { name: "Δείγματα" },
-    { name: "Το Πακέτο Σας" },
-    { name: "Επικοινωνία" },
+    { name: "Υπηρεσίες", href: "#services" },
+    { name: "Δείγματα", href: "#samples" },
+    { name: "Το Πακέτο Σας", href: "#package" },
+    { name: "Επικοινωνία", href: "#contact" },
   ];
 
+  const handleSmoothScroll = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      e.preventDefault();
+      const targetId = href.replace("#", "");
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+      setIsOpen(false);
+    },
+    []
+  );
+
   return (
-    <nav className="bg-black h-[120px] relative z-50">
+    <nav className="bg-black h-[120px] relative z-50" id="home">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[120px]">
           {/* Desktop menu */}
           <div className="hidden lg:flex items-center justify-between w-full">
             <div className="flex-shrink-0 flex items-center">
               {menuItems.slice(0, 2).map((item) => (
-                <p
+                <Link
                   key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleSmoothScroll(e, item.href)}
                   className="text-white hover:text-[#EACFB2] px-8 py-2 rounded-md text-lg font-medium cursor-pointer transition-all duration-300"
                 >
                   {item.name}
-                </p>
+                </Link>
               ))}
             </div>
             <div className="flex-shrink-0">
-              <Image src="/logo.png" alt="Site Logo" width={200} height={120} />
+              <Link href={"#home"}>
+                <Image
+                  src="/logo.png"
+                  alt="Site Logo"
+                  width={200}
+                  height={120}
+                />
+              </Link>
             </div>
             <div className="flex-shrink-0 flex items-center">
               {menuItems.slice(2).map((item) => (
-                <p
+                <Link
                   key={item.name}
+                  href={item.href}
+                  onClick={(e) => handleSmoothScroll(e, item.href)}
                   className="text-white hover:text-[#EACFB2] px-8 py-2 rounded-md text-lg font-medium cursor-pointer transition-all duration-300"
                 >
                   {item.name}
-                </p>
+                </Link>
               ))}
             </div>
           </div>
@@ -72,12 +100,14 @@ const Navbar = () => {
         <div className="lg:hidden absolute top-[120px] left-0 right-0 bg-black z-50 -mt-1">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {menuItems.map((item) => (
-              <p
+              <Link
                 key={item.name}
-                className="text-white hover:text-[#EACFB2] px-8 py-2 rounded-md text-lg font-medium cursor-pointer"
+                href={item.href}
+                onClick={(e) => handleSmoothScroll(e, item.href)}
+                className="block text-white hover:text-[#EACFB2] px-8 py-2 rounded-md text-lg font-medium cursor-pointer"
               >
                 {item.name}
-              </p>
+              </Link>
             ))}
           </div>
         </div>

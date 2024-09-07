@@ -109,7 +109,10 @@ const DynamicForm: React.FC = () => {
   };
 
   return (
-    <section className="bg-[#f5f5f5] flex justify-center pb-12 pt-4">
+    <section
+      className="bg-[#f5f5f5] flex justify-center pb-12 pt-4"
+      id="package"
+    >
       <div className="p-6 max-w-3xl w-full shadow-md">
         <div className="space-x-4 md:space-x-12 mb-6 text-center">
           {Object.keys(options).map((button) => (
